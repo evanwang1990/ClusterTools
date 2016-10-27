@@ -9,6 +9,9 @@ Description: Tools for Cluster Analysis
 License: GLP-3.0
 LazyData: TRUE
 Imports:
-    Rcpp (>= 0.12.7)
+    Rcpp (>= 0.12.7),
+    randomForest
+Suggests:
+    ranger
 LinkingTo:
     Rcpp
