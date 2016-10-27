@@ -1,0 +1,6 @@
+export(
+  "cluster.test",
+  "summary.cluster.test"
+)
+importFrom(Rcpp, evalCpp)
+useDynLib(ClusterTools)
