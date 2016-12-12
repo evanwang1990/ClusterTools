@@ -1,6 +1,11 @@
 export(
-  "cluster.test",
-  "summary.cluster.test"
+  "explore",
+  "summary.cluster.explore",
+  "plot.cluster.explore",
+  "BasicStat",
+  "compare",
+  "select_var",
+  "seeding"
 )
 importFrom(Rcpp, evalCpp)
 useDynLib(ClusterTools)

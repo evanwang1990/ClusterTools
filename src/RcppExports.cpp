@@ -5,6 +5,44 @@
 
 using namespace Rcpp;
 
+// BasicStat
+List BasicStat(const NumericVector dist, const IntegerVector cluster_);
+RcppExport SEXP ClusterTools_BasicStat(SEXP distSEXP, SEXP cluster_SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const NumericVector >::type dist(distSEXP);
+    Rcpp::traits::input_parameter< const IntegerVector >::type cluster_(cluster_SEXP);
+    rcpp_result_gen = Rcpp::wrap(BasicStat(dist, cluster_));
+    return rcpp_result_gen;
+END_RCPP
+}
+// ClusterCompare
+NumericVector ClusterCompare(const IntegerVector cluster_1, const IntegerVector cluster_2);
+RcppExport SEXP ClusterTools_ClusterCompare(SEXP cluster_1SEXP, SEXP cluster_2SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const IntegerVector >::type cluster_1(cluster_1SEXP);
+    Rcpp::traits::input_parameter< const IntegerVector >::type cluster_2(cluster_2SEXP);
+    rcpp_result_gen = Rcpp::wrap(ClusterCompare(cluster_1, cluster_2));
+    return rcpp_result_gen;
+END_RCPP
+}
+// afk_mc2
+IntegerVector afk_mc2(const int k, const int m, const NumericMatrix M, const int threads);
+RcppExport SEXP ClusterTools_afk_mc2(SEXP kSEXP, SEXP mSEXP, SEXP MSEXP, SEXP threadsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const int >::type k(kSEXP);
+    Rcpp::traits::input_parameter< const int >::type m(mSEXP);
+    Rcpp::traits::input_parameter< const NumericMatrix >::type M(MSEXP);
+    Rcpp::traits::input_parameter< const int >::type threads(threadsSEXP);
+    rcpp_result_gen = Rcpp::wrap(afk_mc2(k, m, M, threads));
+    return rcpp_result_gen;
+END_RCPP
+}
 // permutate
 NumericMatrix permutate(NumericMatrix x);
 RcppExport SEXP ClusterTools_permutate(SEXP xSEXP) {
@@ -13,6 +51,43 @@ BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
     rcpp_result_gen = Rcpp::wrap(permutate(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// ParallelSilhouette
+NumericVector ParallelSilhouette(const NumericVector dist, const int num_cases, const IntegerVector cluster, const int num_clusters, const int threads);
+RcppExport SEXP ClusterTools_ParallelSilhouette(SEXP distSEXP, SEXP num_casesSEXP, SEXP clusterSEXP, SEXP num_clustersSEXP, SEXP threadsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const NumericVector >::type dist(distSEXP);
+    Rcpp::traits::input_parameter< const int >::type num_cases(num_casesSEXP);
+    Rcpp::traits::input_parameter< const IntegerVector >::type cluster(clusterSEXP);
+    Rcpp::traits::input_parameter< const int >::type num_clusters(num_clustersSEXP);
+    Rcpp::traits::input_parameter< const int >::type threads(threadsSEXP);
+    rcpp_result_gen = Rcpp::wrap(ParallelSilhouette(dist, num_cases, cluster, num_clusters, threads));
+    return rcpp_result_gen;
+END_RCPP
+}
+// test1
+NumericVector test1(NumericVector x);
+RcppExport SEXP ClusterTools_test1(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(test1(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// test2
+NumericVector test2(NumericVector x);
+RcppExport SEXP ClusterTools_test2(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(test2(x));
     return rcpp_result_gen;
 END_RCPP
 }
